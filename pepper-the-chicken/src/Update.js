@@ -1,5 +1,5 @@
 function update() {
-    if (currentState == states.playing) {
+    if (gameState.currentState == states.playing) {
         obstacles.update();
         difficulty();
     }

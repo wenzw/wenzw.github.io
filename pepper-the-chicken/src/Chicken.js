@@ -38,7 +38,7 @@ let chicken = {
         this.speed += this.gravity;
         this.y += this.speed;
 
-        if (this.y > ground.y - this.height && currentState != states.lost) {
+        if (this.y > ground.y - this.height && gameState.currentState != states.lost) {
             this.y = ground.y - this.height;
             this.numberJumps = 0;
             this.speed = 0;

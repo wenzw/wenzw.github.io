@@ -15,7 +15,7 @@ function main() {
     document.addEventListener("keydown", keyDown);
     document.addEventListener("touchstart", touch, false);
 
-    currentState = states.start;
+    gameState.currentState = states.start;
     rank = localStorage.getItem("rank");
 
     if (rank == null) {

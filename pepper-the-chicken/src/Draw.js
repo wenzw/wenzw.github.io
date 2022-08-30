@@ -1,5 +1,4 @@
 function draw() {
-    facebook = document.getElementById('facebook');
 
     collider[0].draw(context, 0, 0);
     collider[1].draw(context, 0, 0);
@@ -18,13 +17,12 @@ function draw() {
 
     background.draw();
 
-    if (currentState == states.start) {
-        facebook.style.display = "none";
+    if (gameState.currentState == states.start) {
         speed = initial_speed;
         menu_sprite.draw(backgroundContext, 0, 0);
     }
 
-    if (currentState == states.playing) {
+    if (gameState.currentState == states.playing) {
         obstacles.draw();
     }
 
@@ -32,7 +30,7 @@ function draw() {
     drawSoundControl();
     ground.draw();
 
-    if (currentState != states.start) {
+    if (gameState.currentState != states.start) {
         chicken.draw();
     }
 }
