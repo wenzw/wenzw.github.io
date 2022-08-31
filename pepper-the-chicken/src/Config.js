@@ -18,6 +18,7 @@ Object.defineProperty(gameState, 'currentState', {
     currentState = val;
     if (currentState === 2) {
       const data = JSON.stringify({
+        gameId: 2,
         type: 'gameEndInvite',
         gameName: 'Chicken Run',
         gameScore: chicken.score

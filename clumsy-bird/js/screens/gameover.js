@@ -94,6 +94,17 @@ game.GameOverScreen = me.ScreenObject.extend({
             }
         }));
         me.game.world.addChild(this.dialog, 12);
+        const data = JSON.stringify({
+            gameId: 3,
+            type: 'gameEndInvite',
+            gameName: 'flappy bird',
+            gameScore: game.data.steps
+        });
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.todayWidgetGameCenter) {
+            window.webkit.messageHandlers.todayWidgetGameCenter.postMessage(data)
+        } else if (window.todayWidgetGameCenter) {
+            window.todayWidgetGameCenter.postMessage(data)
+        }
     },
 
     onDestroyEvent: function() {
