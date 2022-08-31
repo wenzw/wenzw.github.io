@@ -52,12 +52,12 @@ let sounds = {
     },
 
     toggleOpenningSound: function () {
-        let isOpening = currentState === states.start;
+        let isOpening = gameState.currentState === states.start;
         this.openingTheme(isOpening);
     },
 
     toggleThemeSound: function () {
-        let isPlaying = currentState === states.playing;
+        let isPlaying = gameState.currentState === states.playing;
         this.mainTheme(isPlaying);
     },
 

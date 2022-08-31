@@ -1,23 +1,23 @@
 function jump(event) {
-    if (currentState == states.start) {
-        currentState = states.playing;
+    if (gameState.currentState == states.start) {
+        gameState.currentState = states.playing;
         if (soundEnabled) {
             sounds.start.play();
             sounds.openingTheme(false);
             sounds.mainTheme(true);
         }
     }
-    else if (currentState == states.playing) {
+    else if (gameState.currentState == states.playing) {
         chicken.jump();
 
         if (soundEnabled) {
             sounds.jumpSound();
         }
     }
-    else if (currentState == states.lost && chicken.y >= 2 * HEIGHT) {
+    else if (gameState.currentState == states.lost && chicken.y >= 2 * HEIGHT) {
         sounds.openingTheme(true);
         sounds.mainTheme(false);
-        currentState = states.start;
+        gameState.currentState = states.start;
         obstacles.clean();
         chicken.reset();
     }

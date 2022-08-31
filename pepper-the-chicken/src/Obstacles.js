@@ -26,7 +26,7 @@ let obstacles = {
             // Collision
             if (chicken.x < obs.x + this.widths[obs.number] && chicken.x + chicken.width >=
                 obs.x && chicken.y + chicken.height >= ground.y - this.heights[obs.number]) {
-                currentState = states.lost;
+                gameState.currentState = states.lost;
                 if (soundEnabled) {
                     sounds.lostSound();
                 }
