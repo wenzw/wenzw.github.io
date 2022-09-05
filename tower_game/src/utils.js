@@ -27,9 +27,9 @@ export const getAngleBase = (engine) => {
     case successCount < 10:
       return 30
     case successCount < 20:
-      return 60
+      return 35
     default:
-      return 80
+      return 40
   }
 }
 
@@ -49,13 +49,13 @@ export const getSwingBlockVelocity = (engine, time) => {
       hard = 1
       break
     case successCount < 20:
-      hard = 0.8
+      hard = 1.1
       break
     case successCount < 30:
-      hard = 0.7
+      hard = 1.2
       break
     default:
-      hard = 0.74
+      hard = 1.3
       break
   }
   if (engine.getVariable(constant.hardMode)) {
@@ -71,17 +71,19 @@ export const getLandBlockVelocity = (engine, time) => {
   if (landBlockSpeed) {
     return landBlockSpeed(successCount, gameScore)
   }
+  
   const { width } = engine
+
   let hard
   switch (true) {
     case successCount < 5:
       hard = 0
       break
-    case successCount < 13:
+    case successCount < 10:
       hard = 0.001
       break
     case successCount < 23:
-      hard = 0.002
+      hard = 0.001
       break
     default:
       hard = 0.003

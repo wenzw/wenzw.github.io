@@ -7,6 +7,7 @@
   font-weight: normal;
   font-family: "hupo", "微软雅黑";
 }
+
 body {
   background: #312f31;
     overflow: hidden;
@@ -61,7 +62,7 @@ body {
   position: absolute;
   font-size: 106px;
   top: 145px;
-  right: -303px;
+  right: -503px;
   font-weight: bold;
   -webkit-text-stroke: 3px #000;
   color: #d8bbbc;

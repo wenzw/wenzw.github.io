@@ -32,7 +32,7 @@ Object.defineProperty(gameState, 'currentState', {
     }
   }
 })
-if (WIDTH >= 600) {
+// if (WIDTH >= 600) {
     WIDTH = 600;
     HEIGHT = 550;
-}
+// }

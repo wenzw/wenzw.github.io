@@ -9,7 +9,6 @@ body {
 #background {
   position: absolute;
   width: 100%;
-  height: 100%;
   background-image: url('../sprites/background.png');
   background-size: contain;
   filter: blur(20px);
@@ -19,16 +18,14 @@ body {
 
 #game {
   display: flex;
-  width: 630px;
+  width: 100%;
   margin: auto;
-  height: 600px;
   flex-flow: column;
   align-items: center;
 }
 
 iframe {
-  width: 630px;
-  height: 590px;
+  width: 100%;
   border: none;
 }
 

@@ -30,7 +30,7 @@ function keyDown(event) {
 }
 
 function click(event) {
-    if ((event.clientX > 420 && event.clientX < 610) && event.clientY < 60) {
+    if ((event.clientX > window.innerWidth - 200 && event.clientX < window.innerWidth) && event.clientY < 70) {
         sounds.toggleSounds();
     } else {
         jump();

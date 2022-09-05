@@ -26,3 +26,5 @@ collider[5] = new Sprite(0, 0, 145, 88, "src/sprites/tree.png");
 chicken_sprite[0] = new Sprite(0, 0, 60, 47, "src/sprites/chicken.png");
 chicken_sprite[1] = new Sprite(0, 0, 60, 47, "src/sprites/chicken2.png");
 chicken_sprite[2] = new Sprite(0, 0, 60, 47, "src/sprites/chicken-hit.png");
+weight = new Sprite(0, 0, 96, 100, "src/sprites/weight-0.png");
+weight1 = new Sprite(0, 0,96, 100, "src/sprites/weight-1.png");
