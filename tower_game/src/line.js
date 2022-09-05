@@ -2,6 +2,7 @@ import { getMoveDownValue, getLandBlockVelocity } from './utils'
 import * as constant from './constant'
 
 export const lineAction = (instance, engine, time) => {
+
   const i = instance
   if (!i.ready) {
     i.y = engine.getVariable(constant.lineInitialOffset)
@@ -24,10 +25,12 @@ export const lineAction = (instance, engine, time) => {
 }
 
 export const linePainter = (instance, engine) => {
+
   const { ctx, debug } = engine
   if (!debug) {
     return
   }
+
   ctx.save()
   ctx.beginPath()
   ctx.strokeStyle = 'red'

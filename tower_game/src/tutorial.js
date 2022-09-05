@@ -2,6 +2,7 @@ import { getHookStatus } from './utils'
 import * as constant from './constant'
 
 export const tutorialAction = (instance, engine, time) => {
+  console.log('tutorialAction')
   const { width, height } = engine
   const { name } = instance
   if (!instance.ready) {

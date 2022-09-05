@@ -150,15 +150,15 @@ function indexFn() {
         btns[i].onmouseleave = function() {
             this.classList.remove('selected');
         }
+        // btns[0].onclick = function() {
+        //     //打开关卡页面
+        //     if (levels < 1) {
+        //         levels = 1;
+        //     }
+        //     location.hash = '0/' + charact + '/' + levels + '/' + highest;
+        //     trans(index, levelFn);
+        // }
         btns[0].onclick = function() {
-            //打开关卡页面
-            if (levels < 1) {
-                levels = 1;
-            }
-            location.hash = '0/' + charact + '/' + levels + '/' + highest;
-            trans(index, levelFn);
-        }
-        btns[1].onclick = function() {
             //打开关卡页面
             mode = this.num;
             location.hash = '1/' + charact + '/' + levels + '/' + highest;
@@ -166,18 +166,18 @@ function indexFn() {
         }
     }
     //新手教程
-    var newer = document.getElementsByClassName('new')[0];
-    newer.onmouseenter = function() {
-        this.classList.add('selected');
-    }
-    newer.onmouseleave = function() {
-        this.classList.remove('selected');
-    }
-    newer.onclick = function() {
-        mode = 2;
-        location.hash = mode + '/' + charact + '/0' + '/1';
-        trans(index, mainFn);
-    }
+    // var newer = document.getElementsByClassName('new')[0];
+    // newer.onmouseenter = function() {
+    //     this.classList.add('selected');
+    // }
+    // newer.onmouseleave = function() {
+    //     this.classList.remove('selected');
+    // }
+    // newer.onclick = function() {
+    //     mode = 2;
+    //     location.hash = mode + '/' + charact + '/0' + '/1';
+    //     trans(index, mainFn);
+    // }
 }
 //首页出场动画
 function indexLogo() {
@@ -557,6 +557,22 @@ function deadFn() {
     menu.addEventListener('click', function() {
         clearInterval(timer);
     }, false);
+    var hash = location.hash.substr(1).split('/');
+    if (hash[0] === 1) {
+        const data = JSON.stringify({
+            gameId: 4,
+            type: 'gameEndInvite',
+            gameName: 'Never give up',
+            gameScore: hash[4]
+        });
+      
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.todayWidgetGameCenter) {
+            window.webkit.messageHandlers.todayWidgetGameCenter.postMessage(data)
+        } else if (window.todayWidgetGameCenter) {
+            window.todayWidgetGameCenter.postMessage(data)
+        } 
+    }
+    
 }
 
 //选关
@@ -592,7 +608,7 @@ function btnsBack(obj) {
     } else if (hash[0] == '2' && hash[4] == '100%') {
         progress.innerHTML = '棒!';
     } else if (hash[0] == '1') {
-        progress.innerHTML = hash[4] + '个';
+        progress.innerHTML = hash[4] + ' times';
     } else {
         progress.innerHTML = hash[4];
     }
@@ -608,15 +624,15 @@ function mainFn() {
     //主窗口
     var main = document.getElementsByClassName('main')[0];
     var content = document.getElementById('content');
-    var menu = main.getElementsByClassName('mainMenu')[0];
+    // var menu = main.getElementsByClassName('mainMenu')[0];
     normal.pause();
     content.innerHTML = '';
     content.style.cssText = '';
-    menu.style.display = '';
+    // menu.style.display = '';
     main.style.display = "block";
-    menu.onclick = function() {
-            trans(main, indexFn);
-        }
+    // menu.onclick = function() {
+            // trans(main, indexFn);
+        // }
         //获取hash
 
     var nums = location.hash.substr(1).split('/')[2];
@@ -751,8 +767,8 @@ function mainFn() {
             pattern.innerHTML = '新手教程';
             point.innerHTML = '';
         } else if (j.pattern) {
-            pattern.innerHTML = '挑战模式';
-            point.innerHTML = '最高纪录：' + max;
+            pattern.innerHTML = 'Start jumping！';
+            point.innerHTML = 'Best Record：' + max;
         } else {
             pattern.innerHTML = '闯关模式';
             point.innerHTML = '第' + j.num + '关';
@@ -1014,7 +1030,7 @@ function mainFn() {
             if (ev.keyCode == 32) {
                 //判断是不是第一次使用空格
                 if (boss.style.display == 'block') {
-                    menu.style.display = 'none';
+                    // menu.style.display = 'none';
                     if (star) {
                         star = false;
                         //墨水机消失定时器
