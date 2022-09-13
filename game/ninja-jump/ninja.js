@@ -12922,7 +12922,7 @@ FOTN.DrawGameOver = function(a, f) {
 };
 FOTN.DrawGameOver.prototype = {
     init: function() {
-        this.game.bestScore = new PIXI.Text("最好成绩: ", {
+        this.game.bestScore = new PIXI.Text("Top Score: ", {
             font: (ENEA._isHD ? 40 : 40) + "px Sauna-BlackItalic",
             fill: "#FFFFFF",
             align: "center"
@@ -14855,7 +14855,7 @@ FOTN.RunGame.prototype = {
         this.game.hintText.y = this.game.relY(0.735) - h
     },
     updateGameOverScreen: function() {
-        this.game.bestScore.setText("最好成绩: " + this.getBestScore() + " m");
+        this.game.bestScore.setText("Top Score: " + this.getBestScore() + " m");
         this.game.bestScore.updateTransform();
         this.game.bestScore.applyParams({
             x: this.game.centerX - this.game.bestScore.width / 2,

@@ -317,6 +317,18 @@ function animate(timestamp) {
         (window.innerHeight - config.canvasHeight) / 2;
       if (santaY > maxSantaY) {
         restartButton.style.display = "block";
+        const data = JSON.stringify({
+          gameId: 3,
+          type: 'gameEndInvite',
+          gameName: 'Over the chimney',
+          gameScore: score
+        });
+        
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.todayWidgetGameCenter) {
+          window.webkit.messageHandlers.todayWidgetGameCenter.postMessage(data)
+        } else if (window.todayWidgetGameCenter) {
+          window.todayWidgetGameCenter.postMessage(data)
+        }
         return;
       }
       break;
