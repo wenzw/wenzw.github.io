@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ninja Flips</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/add2home.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui">
+<link rel="icon" type="image/png" href="promo/favicon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="promo/icon-114x114.png">
+
+<script src="js/bundle-cmp.js"></script>
+<meta name="description" content="Play Ninja Flips on Kik! Can you avoid the obstacles? Are you a ninja? Ninja flips is easy to play but hard to master. Tap the screen to make the ninjas flip, and try to survive as long as you can by avoiding the deadly obstacles. Challenge friends, enemies, flirts, crushes, and the opposite sex. If you think Flappy Bird and 2048 are addictive games, wait until you play Ninja Flips.">
+<link rel="kik-icon" href="promo/icon-256x256.png">
+</head>
+<body>
+<div id="game-table">
+<div id="game-cell">
+<div id="viewport" style="width: 375px; height: 234.375px;">
+<canvas id="gamecanvas" width="960" height="600"></canvas>
+</div>
+</div>
+</div>
+<div id="ad-overlay">
+<div id="ad-table">
+<div id="ad-cell">
+<div id="ad-container">
+<div id="ad-close-button"></div>
+<div id="ad"></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
